@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ShopFolio - Categories</title>
+    <link rel="icon" type="image/x-icon" href="/static/favicon.ico">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/feather-icons"></script>
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#3B82F6',
+                        secondary: '#10B981',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .category-card:hover {
+            transform: scale(1.03);
+        }
+        .category-card:hover .overlay {
+            opacity: 1;
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-lg">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="flex justify-between">
+                <div class="flex space-x-7">
+                    <div>
+                        <a href="index.html" class="flex items-center py-4 px-2">
+                            <span class="font-semibold text-gray-500 text-2xl">ShopFolio</span>
+                        </a>
+                    </div>
+                </div>
+                <div class="hidden md:flex items-center space-x-1">
+                    <a href="index.html" class="py-4 px-2 text-gray-500 font-semibold hover:text-primary transition duration-300">Home</a>
+                    <a href="categories.html" class="py-4 px-2 text-primary border-b-4 border-primary font-semibold">Categories</a>
+                    <a href="about.html" class="py-4 px-2 text-gray-500 font-semibold hover:text-primary transition duration-300">About Us</a>
+                </div>
+                <div class="hidden md:flex items-center space-x-3">
+                    <a href="login.html" class="py-2 px-2 font-medium text-gray-500 rounded hover:bg-gray-100 hover:text-primary transition duration-300">Log In</a>
+                    <a href="signup.html" class="py-2 px-2 font-medium text-white bg-primary rounded hover:bg-blue-600 transition duration-300">Sign Up</a>
+                </div>
+                <div class="md:hidden flex items-center">
+                    <button class="outline-none mobile-menu-button">
+                        <i data-feather="menu" class="text-gray-500 hover:text-primary"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="hidden mobile-menu">
+            <ul>
+                <li><a href="index.html" class="block text-sm px-2 py-4 hover:bg-gray-100 transition duration-300">Home</a></li>
+                <li><a href="categories.html" class="block text-sm px-2 py-4 text-white bg-primary font-semibold">Categories</a></li>
+                <li><a href="about.html" class="block text-sm px-2 py-4 hover:bg-gray-100 transition duration-300">About Us</a></li>
+                <li class="border-t border-gray-100"><a href="login.html" class="block text-sm px-2 py-4 hover:bg-gray-100 transition duration-300">Log In</a></li>
+                <li><a href="signup.html" class="block text-sm px-2 py-4 hover:bg-gray-100 transition duration-300">Sign Up</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Categories Header -->
+    <div class="bg-primary text-white py-16">
+        <div class="container mx-auto px-6 text-center">
+            <h1 class="text-4xl font-bold mb-4">Browse Our Categories</h1>
+            <p class="text-xl">Find the perfect product for your needs</p>
+        </div>
+    </div>
+
+    <!-- Search and Filter -->
+    <div class="container mx-auto px-6 py-8">
+        <div class="bg-white rounded-lg shadow-md p-6">
+            <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+                <div class="relative flex-grow">
+                    <input type="text" placeholder="Search categories..." class="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent">
+                    <div class="absolute left-3 top-2.5">
+                        <i data-feather="search" class="text-gray-400"></i>
+                    </div>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <div class="flex items-center">
+                        <label for="sort" class="mr-2 text-gray-700">Sort by:</label>
+                        <select id="sort" class="border border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent">
+                            <option>Popular</option>
+                            <option>Newest</option>
+                            <option>Name (A-Z)</option>
+                            <option>Name (Z-A)</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Categories Grid -->
+    <section class="container mx-auto px-6 py-8">
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+            <!-- Category 1 -->
+            <a href="#" class="category-card relative rounded-lg overflow-hidden shadow-md transition duration-300">
+                <img src="http://static.photos/technology/640x360/4" alt="Technology" class="w-full h-48 object-cover">
+                <div class="overlay absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 transition duration-300">
+                    <span class="text-white font-bold text-xl">View Products</span>
+                </div>
+                <div class="p-4">
+                    <h3 class="text-xl font-semibold text-gray-800">Technology</h3>
+                    <p class="text-gray-600 mt-1">120 products</p>
+                </div>
+            </a>
+            
+            <!-- Category 2 -->
+            <a href="#" class="category-card relative rounded-lg overflow-hidden shadow-md transition duration-300">
+                <img src="http://static.photos/office/640x360/5" alt="Office" class="w-full h-48 object-cover">
+                <div class="overlay absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 transition duration-300">
+                    <span class="text-white font-bold text-xl">View Products</span>
+                </div>
+                <div class="p-4">
+                    <h3 class="text-xl font-semibold text-gray-800">Office Supplies</h3>
+                    <p class="text-gray-600 mt-1">85 products</p>
+                </div>
+            </a>
+            
+            <!-- Category 3 -->
+            <a href="#" class="category-card relative rounded-lg overflow-hidden shadow-md transition duration-300">
+                <img src="http://static.photos/education/640x360/6" alt="Education" class="w-full h-48 object-cover">
+                <div class="overlay absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 transition duration-300">
+                    <span class="text-white font-bold text-xl">View Products</span>
+                </div>
+                <div class="p-4">
+                    <h3 class="text-xl font-semibold text-gray-800">Education</h3>
+                    <p class="text-gray-600 mt-1">62 products</p>
+                </div>
+            </a>
+            
+            <!-- Category 4 -->
+            <a href="#" class="category-card relative rounded-lg overflow-hidden shadow-md transition duration-300">
+                <img src="http://static.photos/food/640x360/7" alt="Food" class="w-full h-48 object-cover">
+                <div class="overlay absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 transition duration-300">
+                    <span class="text-white font-bold text-xl">View Products</span>
+                </div>
+                <div class="p-4">
+                    <h3 class="text-xl font-semibold text-gray-800">Food & Beverages</h3>
+                    <p class="text-gray-600 mt-1">48 products</p>
+                </div>
+            </a>
+            
+            <!-- Category 5 -->
+            <a href="#" class="category-card relative rounded-lg overflow-hidden shadow-md transition duration-300">
+                <img src="http://static.photos/travel/640x360/8" alt="Travel" class="w-full h-48 object-cover">
+                <div class="overlay absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 transition duration-300">
+                    <span class="text-white font-bold text-xl">View Products</span>
+                </div>
+                <div class="p-4">
+                    <h3 class="text-xl font-semibold text-gray-800">Travel</h3>
+                    <p class="text-gray-600 mt-1">72 products</p>
+                </div>
+            </a>
+            
+            <!-- Category 6 -->
+            <a href="#" class="category-card relative rounded-lg overflow-hidden shadow-md transition duration-300">
+                <img src="http://static.photos/health/640x360/9" alt="Health" class="w-full h-48 object-cover">
+                <div class="overlay absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 transition duration-300">
+                    <span class="text-white font-bold text-xl">View Products</span>
+                </div>
+                <div class="p-4">
+                    <h3 class="text-xl font-semibold text-gray-800">Health & Wellness</h3>
+                    <p class="text-gray-600 mt-1">56 products</p>
+                </div>
+            </a>
+            
+            <!-- Category 7 -->
+            <a href="#" class="category-card relative rounded-lg overflow-hidden shadow-md transition duration-300">
+                <img src="http://static.photos/home/640x360/10" alt="Home" class="w-full h-48 object-cover">
+                <div class="overlay absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 transition duration-300">
+                    <span class="text-white font-bold text-xl">View Products</span>
+                </div>
+                <div class="p-4">
+                    <h3 class="text-xl font-semibold text-gray-800">Home & Living</h3>
+                    <p class="text-gray-600 mt-1">93 products</p>
+                </div>
+            </a>
+            
+            <!-- Category 8 -->
+            <a href="#" class="category-card relative rounded-lg overflow-hidden shadow-md transition duration-300">
+                <img src="http://static.photos/fashion/640x360/11" alt="Fashion" class="w-full h-48 object-cover">
+                <div class="overlay absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 transition duration-300">
+                    <span class="text-white font-bold text-xl">View Products</span>
+                </div>
+                <div class="p-4">
+                    <h3 class="text-xl font-semibold text-gray-800">Fashion</h3>
+                    <p class="text-gray-600 mt-1">134 products</p>
+                </div>
+            </a>
+        </div>
+        
+        <!-- Pagination -->
+        <div class="flex justify-center mt-12">
+            <nav class="inline-flex rounded-md shadow">
+                <a href="#" class="px-3 py-2 rounded-l-md border border-gray-300 bg-white text-gray-500 hover:bg-gray-50">
+                    <i data-feather="chevron-left"></i>
+                </a>
+                <a href="#" class="px-4 py-2 border-t border-b border-gray-300 bg-white text-primary">1</a>
+                <a href="#" class="px-4 py-2 border-t border-b border-gray-300 bg-white text-gray-500 hover:bg-gray-50">2</a>
+                <a href="#" class="px-4 py-2 border-t border-b border-gray-300 bg-white text-gray-500 hover:bg-gray-50">3</a>
+                <a href="#" class="px-4 py-2 border-t border-b border-gray-300 bg-white text-gray-500 hover:bg-gray-50">4</a>
+                <a href="#" class="px-4 py-2 border-t border-b border-r border-gray-300 bg-white text-gray-500 hover:bg-gray-50">5</a>
+                <a href="#" class="px-3 py-2 rounded-r-md border border-gray-300 bg-white text-gray-500 hover:bg-gray-50">
+                    <i data-feather="chevron-right"></i>
+                </a>
+            </nav>
+        </div>
+    </section>
+
+    <!-- Newsletter -->
+    <section class="bg-gray-100 py-16">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-3xl font-bold mb-4">Stay Updated</h2>
+            <p class="mb-8 max-w-2xl mx-auto">Subscribe to our newsletter to receive updates on new categories and special offers.</p>
+            <div class="max-w-md mx-auto flex">
+                <input type="email" placeholder="Enter your email" class="flex-grow px-4 py-3 rounded-l focus:outline-none">
+                <button class="bg-primary text-white px-6 py-3 rounded-r font-semibold hover:bg-blue-600 transition duration-300">Subscribe</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-12">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-xl font-semibold mb-4">ShopFolio</h3>
+                    <p class="text-gray-400">Your one-stop portfolio marketplace for all your needs.</p>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Quick Links</h3>
+                    <ul>
+                        <li class="mb-2"><a href="index.html" class="text-gray-400 hover:text-white transition duration-300">Home</a></li>
+                        <li class="mb-2"><a href="categories.html" class="text-gray-400 hover:text-white transition duration-300">Categories</a></li>
+                        <li class="mb-2"><a href="about.html" class="text-gray-400 hover:text-white transition duration-300">About Us</a></li>
+                        <li><a href="account.html" class="text-gray-400 hover:text-white transition duration-300">My Account</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Customer Service</h3>
+                    <ul>
+                        <li class="mb-2"><a href="#" class="text-gray-400 hover:text-white transition duration-300">Contact Us</a></li>
+                        <li class="mb-2"><a href="#" class="text-gray-400 hover:text-white transition duration-300">FAQs</a></li>
+                        <li class="mb-2"><a href="#" class="text-gray-400 hover:text-white transition duration-300">Shipping Policy</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">Returns & Refunds</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Connect With Us</h3>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white transition duration-300"><i data-feather="facebook"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white transition duration-300"><i data-feather="twitter"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white transition duration-300"><i data-feather="instagram"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white transition duration-300"><i data-feather="linkedin"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center text-gray-400">
+                <p>&copy; 2023 ShopFolio. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        const btn = document.querySelector(".mobile-menu-button");
+        const menu = document.querySelector(".mobile-menu");
+
+        btn.addEventListener("click", () => {
+            menu.classList.toggle("hidden");
+        });
+
+        // Initialize Feather Icons
+        feather.replace();
+    </script>
+</body>
+</html>
